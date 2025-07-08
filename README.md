@@ -1,12 +1,84 @@
-# React + Vite
+# 🚀 DevTok
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**DevTok** is a modern, full-stack web application for sharing, watching, and discussing code tutorial videos — think *TikTok/Instagram for developers*, with **AI-powered features** like code explanation and quiz generation.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- 🔐 **User Authentication**: Google OAuth via Firebase  
+- 📤 **Video Upload**: Upload coding tutorial videos (stored on Cloudinary)  
+- 📱 **Feed**: Browse a stylish, vertical video feed (Instagram/TikTok style)  
+- ❤️ **Like & Comment**: Social features for each video  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🤖 AI Tools
+
+- 🧪 Run code snippets in-browser (Pyodide)  
+- 📘 AI-powered code explanation  
+- 🧠 AI-generated quizzes  
+
+- 👤 **Profile**: User profile and bio  
+- ✅ **Production-Ready**: All secrets managed via `.env` and never committed  
+
+---
+
+## 🛠️ Tech Stack
+
+### 🖥️ Frontend
+- React (Vite)
+- Tailwind CSS
+- Firebase Auth
+
+### 🧠 Backend
+- FastAPI
+- Firebase Firestore
+- Cloudinary
+- python-dotenv
+
+### 🤖 AI/ML
+- External endpoints for:
+  - Code explanation
+  - Quiz generation
+
+### 🧬 Other
+- Pyodide (in-browser Python)
+- Google OAuth
+
+---
+
+
+## 📱 Usage
+
+1. 🔐 **Sign in with Google** (OAuth)
+2. 📤 **Upload a code tutorial video** (with code snippet)
+3. 📱 **Browse** the vertical video feed
+4. ❤️ **Like**, 💬 **comment**, and 📤 **share** videos
+5. 🧪 **Run code snippets in-browser**
+6. 📘 **Get AI explanations** for code/video
+7. 🧠 **Generate quizzes** for learning
+
+---
+
+## 📡 API Endpoints (Backend)
+
+### 👤 User
+- `POST /register_user/` — Register a new user
+
+### 📹 Snaps (Videos)
+- `POST /upload_snap/` — Upload a new video snap
+- `GET /fetch_snaps/` — Fetch all video snaps
+- `POST /like_snap/{snap_id}` — Like a snap
+
+### 💬 Comments
+- `GET /comments/{snap_id}` — Get comments for a snap
+- `POST /comment_snap/{snap_id}` — Add a comment
+
+> ⚠️ **Note**: AI-related endpoints are **proxied/external** and not exposed directly in the backend.
+
+---
+
+## 🔐 Security
+
+- 🔑 All secrets are loaded from `.env`
+- 🔒 Service account JSON is **never committed**
+- 🌐 CORS is **enabled for development**; restrict in production for security
